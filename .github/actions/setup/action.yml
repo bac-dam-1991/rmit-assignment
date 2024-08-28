@@ -1,0 +1,9 @@
+name: "Setup"
+description: "Checkout repo and install dependencies"
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v3
+    - name: Install NPM packages
+      run: npm install --prefix src
+      shell: bash
