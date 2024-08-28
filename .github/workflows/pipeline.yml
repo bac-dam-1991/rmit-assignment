@@ -11,12 +11,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: List directory contents
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: List directory contents after checkout
         run: |
-          echo "Current directory:"
+          echo "Current directory after checkout:"
           ls -la
           echo "src directory (if it exists):"
           ls -la src || echo "src directory not found"
 
       - name: Run linting
-        run: npm run test-lint
+        run: npm run test-lint --prefix src
