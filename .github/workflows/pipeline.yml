@@ -19,3 +19,10 @@ jobs:
 
       - name: Run linting
         run: npm run test-lint --prefix src
+
+  unit-testing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: running unit test
+        uses: npm run test-unit --prefix src
