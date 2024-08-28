@@ -9,14 +9,26 @@ on:
 jobs:
   static-code-analysis:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: ./.github/actions/setup
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install NPM packages
+        run: npm install --prefix src
+
       - name: Run linting
         run: npm run test-lint --prefix src
 
   unit-testing:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: ./.github/actions/setup
-      - name: Run unit tests
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install NPM packages
+        run: npm install --prefix src
+
+      - name: running unit test
         run: npm run test-unit --prefix src
