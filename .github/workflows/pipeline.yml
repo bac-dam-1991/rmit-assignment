@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  hello-world:
+  static-code-analysis:
     runs-on: ubuntu-latest
 
     steps:
