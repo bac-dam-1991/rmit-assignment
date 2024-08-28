@@ -11,5 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Running static code analysis
-        run: npm run test-lint --prefix src
+      - name: List directory contents
+        run: |
+          echo "Current directory:"
+          ls -la
+          echo "src directory (if it exists):"
+          ls -la src || echo "src directory not found"
+
+      - name: Run linting
+        run: npm run test-lint
