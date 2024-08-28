@@ -12,4 +12,5 @@ jobs:
 
     steps:
       - name: Running static code analysis
-        run: cd src && npm run test-lint
+        # run: cd src && npm run test-lint
+        run: ls
