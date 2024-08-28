@@ -12,14 +12,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: List directory contents after checkout
-        run: |
-          echo "Current directory after checkout:"
-          ls -la
-          echo "src directory (if it exists):"
-          ls -la src || echo "src directory not found"
+      - name: Install NPM packages
+        run: npm install --prefix src
 
       - name: Run linting
         run: npm run test-lint --prefix src
